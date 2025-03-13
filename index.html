@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav { 
+            display: flex;
+            justify-content: space-between;
+            background-color: aliceblue;
+        } 
+        li{
+            list-style: none;
+            font-size: 1.5rem;
+        }
+        nav ul{
+            display: flex;
+            gap: 20px;
+        }
+         nav li:hover{
+            background-color:rgb(44, 45, 45);
+            color: aliceblue;
+        }
+        .child1{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 3rem;
+            width: 20vh;
+            padding: 2rem;
+        }
+        .img{
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        function navbar(){
+            let nav = document.createElement("nav");
+            let arch=document.createElement("h1")
+            arch.innerHTML="Megha Architects"
+
+            let container=document.createElement("div")
+              
+            let ul=document.createElement("ul")
+            let li=document.createElement("li")
+            li.innerHTML="projects"
+            let li1=document.createElement("li")
+            li1.innerHTML="about"
+            let li2=document.createElement("li")
+            li2.innerHTML="contacts"
+
+
+   ul.append(li,li1,li2)
+   container.append(ul)
+nav.append(arch,container)
+         document.body.append(nav)   
+        }
+        navbar()
+
+
+        function backgroundimage(){
+        content=document.createElement("h1");
+       content.textContent="Megha Architects";
+
+        content.style.backgroundImage="url('https://www.w3schools.com/w3images/architect.jpg')";
+        content.style.height="100vh"
+
+        document.body.append(content)  
+        }
+
+        backgroundimage()
+
+        let projects=document.createElement("h1")
+        projects.innerHTML="Projects";
+        document.body.append(projects)
+
+        function card(){
+          
+          let parentcard=document.createElement("div")
+          parentcard.setAttribute("class","child1")
+          let list1=["summerhouse","brickhouse","Renovated","barnhouse","summerhouse","brickhouse","Renovated","barnhouse"]
+        let list2=["https://www.w3schools.com/w3images/house5.jpg","https://www.w3schools.com/w3images/house2.jpg","https://www.w3schools.com/w3images/house3.jpg","https://www.w3schools.com/w3images/house5.jpg","https://www.w3schools.com/w3images/house2.jpg","https://www.w3schools.com/w3images/house3.jpg","https://www.w3schools.com/w3images/house4.jpg","https://www.w3schools.com/w3images/house3.jpg"]
+
+          for(i=0;i<8;i++){
+      
+            let childcards=document.createElement("div") 
+            let images=document.createElement("img")
+            let text =document.createElement("h3")
+              
+              text.innerHTML=list1[i]
+              images.setAttribute('src',list2[i])
+              images.style.width="48vh"
+
+          childcards.append(images,text)
+        //   console.log(childcards)
+          parentcard.append(childcards)
+        
+        }
+        document.body.append(parentcard)
+     
+          }
+        card()
+
+        let about=document.createElement("h1")
+        let para=document.createElement("p")
+
+        about.innerHTML="About"
+        para.innerHTML="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+
+         document.body.append(about)
+         document.body.append(para)
+
+         function images(){
+            let oral=document.createElement("div")
+            oral.setAttribute("class","img")
+            let im=["https://www.w3schools.com/w3images/team2.jpg","https://www.w3schools.com/w3images/team1.jpg","https://www.w3schools.com/w3images/team3.jpg","https://www.w3schools.com/w3images/team4.jpg"]
+          let names=["John Doe","Jane Doe","Mike Ross","Dan Star"]
+           
+          for (i=0;i<4;i++){
+            let a=document.createElement("div")
+            let b1=document.createElement("img")
+            let b2=document.createElement("h3")
+            let b3=document.createElement("h3")
+            let b4=document.createElement("p")
+            let b5=document.createElement("button")
+
+                  b1.setAttribute("src",im[i])
+                  b1.style.width="39vh"
+                  b4.innerHTML="Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum"
+                  b5.innerHTML="Contact"
+                  b2.innerHTML=names[i]
+
+                  a.append(b1,b2,b3,b4,b5)
+                  oral.append(a)
+
+
+           }
+           document.body.append(oral)
+         }
+         images()
+
+         let  contact=document.createElement("h1")
+         contact.innerHTML="Contact"
+         document.body.append(contact)
+
+        function form(){
+            let form=document.createElement("form")
+            let input1=document.createElement("input")
+            let input2=document.createElement("input")
+            let input3=document.createElement("input")
+             let input4=document.createElement("button")
+             
+            
+             input4.innerHTML="send message"
+
+               input1.setAttribute("placeholder", "Name")
+             input1.style.width="95vw"
+             input1.style.margin="1rem";
+
+             input2.setAttribute("placeholder", "Email")
+             input2.style.width="95vw"
+             input2.style.margin="1rem";
+
+             input3.setAttribute("placeholder","contact")
+             input3.style.width="95vw"
+             input3.style.margin="1rem";
+
+             input4.style.backgroundColor="black"
+            input4.style.color="white"
+            input4.style.margin="1rem";
+
+             
+
+            form.append(input1,input2,input3,input4)
+
+           document.body.append(form)
+        }
+        form()
+
+         let last=document.createElement("img")
+           last.setAttribute("src","https://www.w3schools.com/w3images/map.jpg")
+           document.body.append(last)
+
+
+           let foot=document.createElement("h1")
+           foot.style.backgroundColor="black"
+           foot.style.color="white"
+           foot.style.height="12vh"
+           foot.style.textAlign="center"
+           foot.innerHTML="Powered by w3.css"
+
+           document.body.append(foot)
+    </script>
+</body>
+</html>
